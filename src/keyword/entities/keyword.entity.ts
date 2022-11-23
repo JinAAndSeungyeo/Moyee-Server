@@ -9,6 +9,6 @@ export default class Keyword {
   @Column({ name: 'keyword' })
   keyword!: string;
 
-  @ManyToOne(() => User, user => user.keywords)
+  @ManyToOne(type => User, user => user.keywords)
   user: User;
 }

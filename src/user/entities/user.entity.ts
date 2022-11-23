@@ -24,7 +24,7 @@ export default class User {
   keyword!: number;
 
   @JoinColumn({ name: 'keyword' })
-  @OneToMany(() => Keyword, keyword => keyword.user, {
+  @OneToMany(type => Keyword, keyword => keyword.user, {
     onDelete: 'SET NULL',
     onUpdate: 'CASCADE'
   })
@@ -33,9 +33,9 @@ export default class User {
   @Column({ name: 'profile_image' })
   profileImage!: string;
 
-  @OneToOne(() => Playlist, playlist => playlist.user)
+  @OneToOne(type => Playlist, playlist => playlist.user)
   playlist: Playlist;
 
-  @OneToOne(() => Visitor, visitor => visitor.user)
+  @OneToOne(type => Visitor, visitor => visitor.user)
   visitor: Visitor;
 }

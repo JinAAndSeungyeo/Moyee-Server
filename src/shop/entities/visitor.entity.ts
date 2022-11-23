@@ -20,8 +20,8 @@ export default class Visitor {
   @RelationId((visitor: Visitor) => visitor.user)
   userId!: number;
 
-  @JoinColumn({ name: 'shop' })
-  @OneToOne(() => Shop, {
+  @JoinColumn({ name: 'user_id' })
+  @OneToOne(type => Shop, {
     onDelete: 'CASCADE',
     onUpdate: 'CASCADE'
   })

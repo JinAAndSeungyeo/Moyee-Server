@@ -1,6 +1,7 @@
 import Playlist from 'playlist/entities/playlist.entity';
-import { Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity('music')
 export default class Music {
   @PrimaryGeneratedColumn({ name: 'idx' })
   idx!: number;
@@ -14,6 +15,6 @@ export default class Music {
   @Column({ name: 'youtube_link' })
   youtubeLink!: string;
 
-  @ManyToOne(() => Playlist, playlist => playlist.music)
+  @ManyToOne(type => Playlist, playlist => playlist.music)
   playlist: Playlist;
 }

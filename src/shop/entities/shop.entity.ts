@@ -15,6 +15,6 @@ export default class Shop {
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: Date;
 
-  @OneToOne(() => Visitor, visitor => visitor.shop)
+  @OneToOne(type => Visitor, visitor => visitor.shop)
   visitor: Visitor;
 }

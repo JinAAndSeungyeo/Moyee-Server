@@ -24,7 +24,7 @@ export default class Playlist {
   music!: number;
 
   @JoinColumn({ name: 'music' })
-  @OneToMany(() => Music, music => music.playlist)
+  @OneToMany(type => Music, music => music.playlist)
   musics!: Music[];
 
   @CreateDateColumn({ name: 'created_at' })
